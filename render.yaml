@@ -3,7 +3,7 @@ services:
     name: house-price-prediction
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: cd housing_price_prediction && gunicorn app:app
+    startCommand: gunicorn --chdir housing_price_prediction app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.0
